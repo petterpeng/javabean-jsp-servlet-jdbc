@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>MyServlet</display-name>
+     <servlet>
+        <!-- servlet的注册名称，自定义。每个servlet的name不一样 -->
+        <servlet-name>listServ</servlet-name>
+        <!-- servlet的完整类名： 包名+类名；如果ctrl+鼠标左击能 点开，说明成功-->
+        <servlet-class>servlet.ListServlet</servlet-class>
+    </servlet>
+    <!-- servlet的映射配置 -->
+    <servlet-mapping>
+        <!-- servlet的注册名称，一定要和上面的内部名称保持一致！！ -->
+        <servlet-name>listServ</servlet-name>
+        <!-- servlet的对外访问路径（访问servlet的名称） -->
+        <url-pattern>/list</url-pattern>
+    </servlet-mapping>
+    <!-- ps:同一个servlet可以配置多个servlet-mapping，举个栗子 -->
+    <servlet-mapping>
+        <!-- 还是上面的那个servlet -->
+        <servlet-name>listServ</servlet-name>
+        <!-- 除了/ListServlet,又配置了一个list2,通过这两个路径都可访问listServ这个servlet -->
+        <url-pattern>/list2</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>addServ</servlet-name>
+        <servlet-class>servlet.AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addServ</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>updateServ</servlet-name>
+        <servlet-class>servlet.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateServ</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>delServ</servlet-name>
+        <servlet-class>servlet.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delServ</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+</web-app>
